@@ -1,0 +1,74 @@
+plugin.tx_feuserstat_pi1 = USER
+plugin.tx_feuserstat_pi1 {
+    # uid of the page where Frontend user records are stored
+    usersPid = {$plugin.tx_feuserstat_pi1.usersPid}
+    # uid of the page where single view is located
+    singlePid = {$plugin.tx_feuserstat_pi1.singlePid}
+    # uid of the page where list view is located
+    listPid = {$plugin.tx_feuserstat_pi1.listPid}
+    # Template file to use
+    templateFile = {$plugin.tx_feuserstat_pi1.templateFile}
+}
+
+#stdWrap for fields in single view
+singleView{
+    # field: image
+    image_stdWrap {
+        setContentToCurrent = 1
+        cObject = IMAGE
+        cObject {
+            file {
+                import = upload/pics
+                import.current = 1
+                width = 150m
+                height = 150m
+            }
+            imageLinkWrap = 1
+            imageLinkWrap {
+                enable = 1
+                JSwindow = 1
+            }
+        }
+        ifEmpty.dataWrap {
+            <div class="tx_feuserstatpi1_no_image">
+                {LLL:EXT:feuserstat/pi1/locallang.xml:no_image}
+            </div>
+        }
+    }
+    #field: email
+    email_stdWrap {
+        if.isFalse.current = 1
+        typolink.parameter.dataWrap = mailto: {field:email}
+    }
+    #field: crdate
+    crdate_stdWrap {
+        strftime = %c
+    }
+    #field: tstamp
+    tstamp_stdWrap {
+        strftime = %c
+    }
+}
+
+listViews {
+    pageSize = {$plugin.tx_feuserstat_pi1.pageSize}
+    sortField = {$plugin.tx_feuserstat_pi1.sortfield}
+    username_stdWrap {
+        typolink.parameter < plugin.tx_feuserstat_pi1.singlePid
+        typolink.parameter.ifEmpty.dataWrap = {TSFE:id}
+        typolink.additionalParams.dataWrap = &tx_feuserstat_pi1[showUid]={field:uid}
+    }
+    email_stdWrap {
+        if.isFalse.current = 1
+        typolink.parameter.dataWrap = mailto: {field:email}
+    }
+    crdate_stdWrap {
+        strftime = %x
+    }
+    tstamp_stdWrap {
+        strftime = %x
+    }
+    lastlogin_stdWrap {
+        strftime = %x
+    }
+}

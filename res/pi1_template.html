@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>p1 plugin template file</title>
+        <!-- ###HEADER_PARTS### begin -->
+        <script type="text/javascript" src="###SITE_REL_PATH###res/pi1.js"></script>
+        <link rel="stylesheet" type="text/css" href="###SITE_REL_PATH###res/pi1.css" />
+        <!-- ###HEADER_PARTS### end -->
+    </head>
+    <body>
+        <h1>Single view</h1>
+        <!-- ###SINGLE_VIEW### begin -->
+        <div class="tx_feuserstat_single">
+            <table>
+                <tr>
+                    <td rowspan="5">
+                        ###IMAGE###
+                    </td>
+                    <td class="tx_feuserstat_label">
+                        ###TEXT_USERNAME###
+                    </td>
+                    <td class="tx_feuserstat_value">
+                        ###FIELD_USERNAME###
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tx_feuserstat_label">
+                        ###TEXT_NAME###
+                    </td>
+                    <td class="tx_feuserstat_value">
+                        ###FIELD_NAME###
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tx_feuserstat_label">
+                        ###TEXT_CRDATE###
+                    </td>
+                    <td class="tx_feuserstat_value">
+                        ###FIELD_CRDATE###
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tx_feuserstat_label">
+                        ###TEXT_TSTAMP###
+                    </td>
+                    <td class="tx_feuserstat_value">
+                        ###FIELD_TSTAMP###
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="tx_feuserstat_label">
+                        ###TEXT_EMAIL###
+                    </td>
+                    <td class="tx_feuserstat_value">
+                        ###FIELD_EMAIL###
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <!-- ###SINGLE_VIEW### end -->
+        <h1>Single view whien user is not found</h1>
+        <!-- ###SINGLE_VIEW_NO_USER### begin -->
+        ###TEXT_USER_NOT_FOUND###
+        <!-- ###SINGLE_VIEW_NO_USER### end -->
+
+        <!-- ###LIST### begin -->
+        <div class="tx_feuserstat_list">
+            <table class="tx_feuserstat_list_users">
+                <tr><th>
+                        ###TEXT_NUMBER###
+                    </th><th>
+                        ###TEXT_USERNAME###
+                    </th><th>
+                        ###TEXT_NAME###
+                    </th><th>
+                        ###TEXT_CRDATE###
+                    </th><th>
+                        ###TEXT_TSTAMP###
+                    </th><th>
+                        ###TEXT_LASTLOGIN###
+                    </th></tr>
+                <!-- ###LIST_ITEM### begin -->
+                <tr><td>
+                        ###NUMBER###
+                    </td><td>
+                        ###FIELD_USERNAME###
+                    </td><td>
+                        ###FIELD_NAME###
+                    </td><td>
+                        ###FIELD_CRDATE###
+                    </td><td>
+                        ###FIELD_TSTAMP###
+                    </td><td>
+                        [ 140 ]
+                        Chapter 6
+                        ###FIELD_LASTLOGIN###
+                    </td></tr>
+                <!-- ###LIST_ITEM### end -->
+            </table>
+            <!-- ###PAGER### begin -->
+            <table class="tx_feuserstat_list_pager">
+                <tr><td>
+                        ###LINK_PREV###
+                    </td><td>
+                        ###CURRENT_PAGE###
+                    </td><td>
+                        ###LINK_NEXT###
+                    </td></tr>
+            </table>
+            <!-- ###PAGER### end -->
+        </div>
+        <!-- ###LIST### end -->
+
+    </body>
+</html>

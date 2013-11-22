@@ -1,0 +1,21 @@
+plugin.tx_feuserstat_pi1 {
+    # cat=feuserstat; type=int+; label=User storage page:
+    uid of the page where Frontend user records are stored
+    usersPid =
+    # cat=feuserstat; type=int+; label=Single view page:
+    uid of the page where single view is located
+    singlePid =
+    # cat=feuserstat; type=int+; label=List view page:
+    uid of the page where list view is located
+    listPid =
+    # cat=feuserstat; type=string; label=Template file
+    templateFile = EXT:feuserstat/res/pi1_template.html
+
+    # cat=feuserstat: List view; type=int+; label=Page size:
+    Number of items displayed on a single page in the list view
+    pageSize = 10
+    # cat=feuserstat: List view; type=int+; label=Sort by:
+    A valid field from fe_users table for sorting items. Incorrect field
+    name field will cause empty output
+    sortField = username
+}
